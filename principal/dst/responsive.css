@@ -1,0 +1,238 @@
+/* Estilos responsivos para GameStore */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el botón de menú móvil */
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 100;
+    margin-right: 15px;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #39ff14;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Pantallas grandes (escritorio) - Cambiado de 5 a 3 productos por fila */
+@media screen and (min-width: 1200px) {
+    .game-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .game-card {
+        padding: 20px;
+    }
+}
+
+/* Pantallas medianas (tablets) */
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+    .game-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+    
+    .game-card {
+        padding: 15px;
+    }
+}
+
+/* Pantallas pequeñas (móviles en horizontal) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    
+    .nav-links {
+        display: none;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+    
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .nav-links a {
+        margin: 8px 0;
+    }
+    
+    .container {
+        width: 100%;
+        margin-top: 15px;
+    }
+    
+    .auth-buttons {
+        margin-top: 15px;
+    }
+    
+    .game-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .game-card {
+        padding: 10px;
+    }
+    
+    .title-product {
+        font-size: 0.9rem;
+    }
+    
+    .price {
+        font-size: 0.9rem;
+    }
+    
+    .actions {
+        flex-direction: column;
+    }
+    
+    .button {
+        width: 100%;
+        margin: 5px 0;
+        font-size: 0.8rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-section {
+        width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+
+/* Pantallas muy pequeñas (móviles en vertical) */
+@media screen and (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+    
+    .nav-links {
+        display: none;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+    
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .nav-links a {
+        margin: 5px 0;
+        font-size: 0.9rem;
+    }
+    
+    .container {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .input {
+        width: 100%;
+        padding: 8px;
+    }
+    
+    .auth-buttons {
+        margin-top: 10px;
+    }
+    
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        padding: 8px;
+    }
+    
+    .game-card {
+        padding: 8px;
+    }
+    
+    .game-card img {
+        border-radius: 5px;
+    }
+    
+    .title-product {
+        font-size: 0.8rem;
+    }
+    
+    .price {
+        font-size: 0.8rem;
+    }
+    
+    .actions {
+        flex-direction: column;
+    }
+    
+    .button {
+        width: 100%;
+        margin: 3px 0;
+        padding: 6px;
+        font-size: 0.7rem;
+    }
+    
+    .button svg {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .footer-section {
+        width: 100%;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    
+    .footer-section h4 {
+        font-size: 0.9rem;
+    }
+    
+    .footer-section a {
+        font-size: 0.8rem;
+    }
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Myth: Wukong - GameStore</title>
+    <meta name="description" content="Compra Black Myth: Wukong para PS5. Encarna al legendario Rey Mono en esta épica aventura basada en la mitología china. Pre-orden disponible.">
+    <!-- Optimización de carga de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    </noscript>
+    <link rel="stylesheet" href="/principal/dst/main.css">
+    <link rel="stylesheet" href="/principal/pages/productos/products.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">🎮 PlayStation 5 GameStore</div>
+            <nav class="nav-links">
+                <a href="/index.html">Inicio</a>
+                <a href="/principal/pages/catalogo/catalogo.html">Catálogo</a>
+                <a href="/principal/pages/nosotros.html">Nosotros</a>
+                <a href="/principal/pages/soporte.html">Soporte</a>
+                <a href="/principal/pages/carrito.html">Carrito</a>
+            </nav>
+            <div class="neon-particles-header" id="neonParticlesHeader"></div>
+            <div class="container">
+                <input type="text" name="text" class="input" placeholder="Buscar..." aria-label="Buscar juegos">
+            </div>
+            <div class="auth-buttons">
+                <a href="/Isesion/index.html" id="loginStatus">Logearse</a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="section-title">
+        <h2 class="logo">🎮 Detalles del Producto</h2>
+    </div>
+    
+    <main class="product-container">
+        <div class="product-image-section">
+            <img src="/principal/img/juegos/1718149460-black-myth-wukong-ps5-pre-orden-0.jpg" alt="Black Myth: Wukong - Portada del juego" class="product-main-image" id="mainProductImage" onclick="openLightbox(this.src)" width="400" height="500" loading="lazy">
+            
+            <div class="product-thumbnails">
+                <img src="/principal/pages/productos/wukong/black-myth-wukong-screenshot-01-en-24jan24.webp" alt="Black Myth: Wukong - Escena de combate" class="product-thumbnail" onclick="changeImage(this.src)" width="100" height="56" loading="lazy">
+                <img src="/principal/pages/productos/wukong/black-myth-wukong-screenshot-02-en-24jan24.webp" alt="Black Myth: Wukong - Paisaje del juego" class="product-thumbnail" onclick="changeImage(this.src)" width="100" height="56" loading="lazy">
+                <img src="/principal/pages/productos/wukong/black-myth-wukong-screenshot-05-en-24jan24.webp" alt="Black Myth: Wukong - Personaje principal" class="product-thumbnail" onclick="changeImage(this.src)" width="100" height="56" loading="lazy">
+                <img src="/principal/pages/productos/wukong/black-myth-wukong-screenshot-08-en-7Feb24.webp" alt="Black Myth: Wukong - Jefe del juego" class="product-thumbnail" onclick="changeImage(this.src)" width="100" height="56" loading="lazy">
+            </div>
+        </div>
+        
+        <div class="product-info-section">
+            <div class="product-header">
+                <h1 class="product-title">Black Myth: Wukong</h1>
+                <p class="product-developer">Game Science</p>
+                <p class="product-price">S/. 259.90</p>
+                <p class="product-stock">✅ Pre-orden Disponible</p>
+                
+                <div class="product-actions">
+                    <button class="add-to-cart-btn" aria-label="Añadir Black Myth: Wukong al carrito" data-product-id="wukong" data-product-price="259.90">
+                        Añadir al Carrito
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                        </svg>
+                    </button>
+                    <button class="wishlist-btn" aria-label="Añadir Black Myth: Wukong a la lista de deseos" data-product-id="wukong">
+                        Lista de Deseos
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product-section">
+                <h3 class="section-title">DESCRIPCIÓN</h3>
+                <p class="product-description">
+                    Black Myth: Wukong es un impresionante juego de acción y aventura basado en la novela clásica china "Viaje al Oeste". Encarna al legendario Rey Mono, Sun Wukong, en una épica aventura a través de un mundo inspirado en la mitología china.
+                </p>
+                <p class="product-description">
+                    Desarrollado por Game Science, este juego combina combate intenso, exploración detallada y una narrativa rica en un mundo visualmente impresionante. Utiliza tus habilidades sobrenaturales, transformaciones y artes marciales para enfrentarte a criaturas mitológicas y dioses.
+                </p>
+                <p class="product-description">
+                    Con un sistema de combate profundo y desafiante, gráficos de última generación y una ambientación única, Black Myth: Wukong promete una experiencia inmersiva que trae a la vida una de las leyendas más queridas de la cultura china.
+                </p>
+            </div>
+            
+            <div class="product-section">
+                <h3 class="section-title">CARACTERÍSTICAS</h3>
+                <ul class="product-specs">
+                    <li>Combate fluido y estratégico inspirado en las artes marciales chinas</li>
+                    <li>Más de 100 tipos de enemigos únicos basados en la mitología china</li>
+                    <li>Sistema de transformación que permite adoptar diferentes formas con habilidades únicas</li>
+                    <li>Mundo abierto con diversos biomas y localizaciones inspiradas en la antigua China</li>
+                    <li>Jefes épicos que requieren estrategia y habilidad para ser derrotados</li>
+                    <li>Gráficos de última generación con Unreal Engine 5</li>
+                    <li>Sistema de progresión profundo con mejoras de habilidades y equipamiento</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="product-section" style="grid-column: span 2;">
+            <h3 class="section-title">TRAILER OFICIAL</h3>
+            <div class="product-trailer">
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/u83VdXAVq08" title="Black Myth: Wukong Trailer Oficial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </div>
+        
+        <div class="product-section" style="grid-column: span 2;">
+            <h3 class="section-title">ESPECIFICACIONES</h3>
+            <ul class="product-specs">
+                <li><strong>Plataforma:</strong> PlayStation 5</li>
+                <li><strong>Género:</strong> Acción, Aventura, RPG</li>
+                <li><strong>Desarrollador:</strong> Game Science</li>
+                <li><strong>Editor:</strong> Game Science</li>
+                <li><strong>Fecha de lanzamiento:</strong> 20 de agosto de 2024</li>
+                <li><strong>Idiomas:</strong> Audio en chino, textos en español</li>
+                <li><strong>Jugadores:</strong> 1 jugador</li>
+                <li><strong>Clasificación:</strong> PEGI 16</li>
+                <li><strong>Resolución:</strong> 4K a 60 FPS</li>
+            </ul>
+        </div>
+        
+        <div class="product-section" style="grid-column: span 2;">
+            <h3 class="section-title">PRODUCTOS RELACIONADOS</h3>
+            <div class="related-products">
+                <a href="/principal/pages/productos/eldenring.html" class="related-product" aria-label="Ver detalles de Elden Ring">
+                    <img src="/principal/img/juegos/1639687011-elden-ring-ps5-pre-orden.jpg" alt="Elden Ring" width="150" height="200" loading="lazy">
+                    <div class="related-product-info">
+                        <h4 class="related-product-title">Elden Ring</h4>
+                        <p class="related-product-price">S/. 219.90</p>
+                    </div>
+                </a>
+                <a href="/principal/pages/productos/mhunter.html" class="related-product" aria-label="Ver detalles de Monster Hunter Wilds">
+                    <img src="/principal/img/juegos/1718238829-monster-hunter-wilds-ps5-pre-orden-0.jpg" alt="Monster Hunter Wilds" width="150" height="200" loading="lazy">
+                    <div class="related-product-info">
+                        <h4 class="related-product-title">Monster Hunter Wilds</h4>
+                        <p class="related-product-price">S/. 259.90</p>
+                    </div>
+                </a>
+                <a href="/principal/pages/productos/hogwarts.html" class="related-product" aria-label="Ver detalles de Hogwarts Legacy">
+                    <img src="/principal/img/juegos/1675969170-hogwarts-legacy-digital-deluxe-edition-pre-orden-ps5-0.jpg" alt="Hogwarts Legacy" width="150" height="200" loading="lazy">
+                    <div class="related-product-info">
+                        <h4 class="related-product-title">Hogwarts Legacy</h4>
+                        <p class="related-product-price">S/. 199.90</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <div class="spacer"></div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>📢 Información</h4>
+                <a href="/principal/pages/soporte.html">🔗 Soporte Técnico</a>
+                <a href="/principal/pages/contacto.html">📞 Contacto</a>
+            </div>
+            <div class="footer-section">
+                <h4>📱 Redes Sociales</h4>
+                <a href="#" aria-label="Facebook">📘 Facebook</a>
+                <a href="#" aria-label="Twitter">🐦 Twitter</a>
+                <a href="#" aria-label="Instagram">📸 Instagram</a>
+            </div>
+        </div>
+        <p>© 2025 Tienda de Videojuegos. Todos los derechos reservados.</p>
+        <div class="neon-particles-footer" id="neonParticlesFooter"></div>
+    </footer>
+    <div class="neon-particles" id="neonParticles" style="pointer-events: none; position: fixed; width: 100vw; height: 100vh; overflow: hidden;"></div>
+    <div class="neon-grid"></div>
+    
+    <!-- Lightbox para ampliar imágenes -->
+    <div id="imageLightbox" class="lightbox" onclick="closeLightbox()" role="dialog" aria-label="Visor de imagen ampliada">
+        <span class="close-lightbox" aria-label="Cerrar visor de imagen">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightboxImage" class="lightbox-image" alt="Imagen ampliada de Black Myth: Wukong">
+        </div>
+    </div>
+    
+    <script src="/principal/script.js" defer></script>
+    <script src="/principal/search.js" defer></script>
+    <script src="/principal/pages/productos/productos.js" defer></script>
+</body>
+</html>

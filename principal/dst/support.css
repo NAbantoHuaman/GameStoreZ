@@ -1,0 +1,127 @@
+/* Estilos para la página de soporte */
+.support-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.support-section {
+    background: rgba(20, 20, 30, 0.7);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(68, 189, 50, 0.3);
+}
+
+.support-title {
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(68, 189, 50, 0.5);
+}
+
+/* Estilos para las preguntas frecuentes */
+.faq-item {
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(30, 30, 40, 0.6);
+}
+
+.faq-question {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background: rgba(68, 189, 50, 0.1);
+}
+
+.faq-question h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.faq-question svg {
+    width: 20px;
+    height: 20px;
+    stroke: #44bd32;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 15px;
+}
+
+.faq-answer p {
+    margin: 0;
+    padding: 15px 0;
+    color: #ddd;
+}
+
+/* Estilos para el formulario de contacto */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(68, 189, 50, 0.3);
+    background: rgba(30, 30, 40, 0.6);
+    color: #fff;
+    font-family: inherit;
+    resize: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #44bd32;
+    box-shadow: 0 0 5px rgba(68, 189, 50, 0.5);
+}
+
+.contact-form .button {
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+    .support-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    
+    .support-section {
+        flex: 1;
+    }
+}

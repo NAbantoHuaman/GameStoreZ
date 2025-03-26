@@ -1,0 +1,18 @@
+/* Importar todos los archivos CSS */
+@import 'base.css';
+@import 'header.css';
+@import 'game-cards.css';
+@import 'footer.css';
+@import 'effects.css';
+@import 'responsive.css';
+@import 'button.css';
+@import 'category.css';
+@import 'support.css';
+@import 'payment.css';
+@import 'about.css';
+@import 'car.css';
+@import 'contact.css';
+@import 'products.css';
+@import 'accion.css';
+@import '/principal/pages/resultados.css';
+@import 'login.css';

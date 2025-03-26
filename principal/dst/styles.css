@@ -1,0 +1,667 @@
+/* Variables globales */
+:root {
+  --bg-color: #0a0a0a;
+  --neon-green: #39ff14;
+  --dark-gray: #1a1a1a;
+  --shadow-neon: 0 0 15px var(--neon-green);
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos del cuerpo */
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: var(--bg-color);
+  color: white;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  
+  background-image: radial-gradient(rgba(10, 10, 10, 0.9) 55%, transparent),
+    linear-gradient(
+      135deg,
+      rgba(57, 255, 20, 0.2),
+      rgba(0, 50, 0, 0.3),
+      rgba(57, 255, 20, 0.2),
+      rgba(0, 20, 0, 0.3),
+      rgba(57, 255, 20, 0.2)
+    );
+  background-size: 100% 0.5%, contain;
+}
+
+/* Efecto de fondo */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 20%, var(--bg-color) 20%, var(--bg-color) 80%, transparent 80%, transparent),
+              radial-gradient(circle, transparent 20%, var(--bg-color) 20%, var(--bg-color) 80%, transparent 80%, transparent) 50px 50px;
+  background-size: 100px 100px;
+  opacity: 0.1;
+  z-index: -1;
+  animation: moveBackground 50s linear infinite;
+}
+
+/* Estilos del header */
+header {
+  background: var(--dark-gray);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  overflow: hidden;
+  
+  background-image: radial-gradient(rgba(26, 26, 26, 0.9) 55%, transparent),
+    linear-gradient(
+      90deg,
+      rgba(57, 255, 20, 0.1),
+      rgba(0, 50, 0, 0.2),
+      rgba(57, 255, 20, 0.1)
+    );
+  background-size: 100% 0.5%, contain;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1550px;
+  margin: 0 auto;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.logo {
+  color: var(--neon-green);
+  font-size: 1.5rem;
+  text-shadow: 0 0 10px var(--neon-green);
+}
+
+/* Botones de autenticación */
+.auth-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.auth-buttons a {
+  color: white;
+  padding: 0.5rem 1rem;
+  background: var(--dark-gray);
+  border: 1px solid var(--neon-green);
+  border-radius: 5px;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.auth-buttons a:hover {
+  background: var(--neon-green);
+  color: black;
+  transform: scale(1.05);
+}
+
+/* Barra de búsqueda */
+.container {
+  position: relative;
+  width: 250px;
+}
+
+.input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  background: rgba(26, 26, 26, 0.8);
+  border: 2px solid var(--neon-green);
+  border-radius: 20px;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px rgba(57, 255, 20, 0.3);
+}
+
+.input:focus {
+  box-shadow: 0 0 10px var(--neon-green);
+  border-color: var(--neon-green);
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search__btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search__btn:hover svg path {
+  fill: var(--neon-green);
+  filter: drop-shadow(0 0 3px var(--neon-green));
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: var(--dark-gray);
+  border: 2px solid var(--neon-green);
+  border-radius: 5px;
+  color: white;
+}
+
+.search-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0.5rem 1rem;
+  background: var(--neon-green);
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.search-button:hover {
+  background: #00ff00;
+}
+
+/* Enlaces de navegación */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--neon-green);
+  bottom: 0;
+  left: 50%;
+  transition: all 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Grid de juegos */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1.5rem;
+  row-gap: 4.5rem;
+  padding: 1.5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Tarjetas de juegos */
+.game-card {
+  background: var(--dark-gray);
+  border: 1px solid var(--neon-green);
+  border-radius: 8px;
+  padding: 1.2rem;
+  padding-bottom: 1.8rem;
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+  will-change: transform;
+  backface-visibility: hidden;
+  position: relative;
+  overflow: hidden;
+  animation: pulseBorder 3s infinite alternate;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  min-height: 480px;
+}
+
+.game-card h3 {
+  color: var(--neon-green);
+  margin-bottom: 0.8rem;
+  text-align: center;
+  font-size: 1.25rem;
+  text-shadow: 0 0 5px var(--neon-green);
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  max-height: 320px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.15s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.img:hover {
+  transform: scale(1.04);
+  filter: drop-shadow(0 0 6px var(--neon-green));
+}
+
+.game-card .price {
+  color: yellow;
+  font-weight: bold;
+  margin: 0.8rem 0;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.game-card .price::before {
+  content: "Precio: ";
+  color: yellow;
+  text-shadow: 0 0 5px var(--neon-green);
+  font-weight: normal;
+}
+
+.game-card .actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.game-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-neon);
+}
+
+.game-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--neon-green);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* Botones */
+.button {
+  background: var(--dark-gray);
+  border: 1px solid var(--neon-green);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, var(--neon-green), transparent);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+}
+
+.button:hover {
+  background: var(--neon-green);
+  color: black;
+  transform: scale(1.05);
+}
+
+.button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Footer */
+footer {
+  background: var(--dark-gray);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+  
+  background-image: radial-gradient(rgba(26, 26, 26, 0.9) 55%, transparent),
+    linear-gradient(
+      90deg,
+      rgba(57, 255, 20, 0.1),
+      rgba(0, 50, 0, 0.2),
+      rgba(57, 255, 20, 0.1)
+    );
+  background-size: 100% 0.5%, contain;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-section h4 {
+  color: var(--neon-green);
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: var(--neon-green);
+  text-shadow: 0 0 5px var(--neon-green);
+}
+
+/* Efectos de neón */
+.neon-text {
+  animation: neonGlow 1.5s ease-in-out infinite alternate;
+}
+
+.neon-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+      90deg,
+      transparent,
+      var(--neon-green),
+      transparent
+  );
+  transition: 0.5s;
+}
+
+.neon-border:hover::before {
+  left: 100%;
+}
+
+/* Partículas neón */
+.neon-particles-header, .neon-particles-footer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.neon-particles-header {
+  top: 0;
+  left: 0;
+}
+
+.neon-particles-footer {
+  bottom: 0;
+  left: 0;
+}
+
+.neon-particle-header, .neon-particle-footer, .neon-particle {
+  position: absolute;
+  border-radius: 50%;
+  background-color: var(--neon-green);
+}
+
+.neon-particle-header, .neon-particle-footer {
+  width: 2px;
+  height: 2px;
+  box-shadow: 0 0 8px var(--neon-green), 0 0 15px var(--neon-green);
+  opacity: 0.7;
+}
+
+.neon-particle {
+  width: 3px;
+  height: 3px;
+  box-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.neon-particle-header {
+  animation: floatParticleHeader 8s infinite linear;
+}
+
+.neon-particle-footer {
+  animation: floatParticleFooter 10s infinite linear;
+}
+
+.neon-particle {
+  animation: floatParticle 15s infinite linear;
+}
+
+/* Efectos adicionales */
+.neon-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(57, 255, 20, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(57, 255, 20, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: -2;
+  overflow: hidden;
+}
+
+/* Personalización de la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neon-green);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00ff00;
+}
+
+/* Secciones adicionales */
+section {
+  opacity: 1;
+  transform: translateY(50px);
+}
+
+/* Asegurarse de que todos los contenedores principales respeten el ancho */
+.header-content, .game-grid, .footer-content {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Espaciador para separar contenido */
+.spacer {
+  margin-bottom: 4rem;
+  clear: both;
+}
+
+/* Animaciones */
+@keyframes pulseBorder {
+  0% {
+    box-shadow: 0 0 5px rgba(57, 255, 20, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.7);
+  }
+}
+
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 5px var(--neon-green), 0 0 10px var(--neon-green);
+  }
+  to {
+    text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
+  }
+}
+
+@keyframes moveBackground {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50px, -50px);
+  }
+}
+
+@keyframes floatParticleHeader {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-20px) translateX(20px);
+    opacity: 0.3;
+  }
+}
+
+@keyframes floatParticleFooter {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-30px) translateX(-20px);
+    opacity: 0.3;
+  }
+}
+
+@keyframes floatParticle {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(100px);
+    opacity: 0;
+  }
+}
+
+/* Media queries para responsividad */
+@media (max-width: 1200px) {
+  .game-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .game-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .auth-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-card {
+    min-height: 420px;
+  }
+  
+  .img {
+    max-height: 280px;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+.section-title {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.section-title h2 {
+  font-size: 2rem;
+  text-shadow: 0 0 10px var(--neon-green);
+}

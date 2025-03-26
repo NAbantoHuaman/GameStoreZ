@@ -1,0 +1,48 @@
+.no-results {
+    color: #39ff14;
+    text-align: center;
+    padding: 30px;
+    font-size: 1.2rem;
+}
+
+.category-tag {
+    background-color: rgba(57, 255, 20, 0.2);
+    color: #39ff14;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin: 5px 0;
+    display: inline-block;
+}
+
+.search-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.filter-btn {
+    background-color: rgba(57, 255, 20, 0.1);
+    border: 1px solid #39ff14;
+    color: #39ff14;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: #39ff14;
+    color: #000;
+}
+
+@media screen and (max-width: 768px) {
+    .search-filters {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        justify-content: flex-start;
+    }
+}

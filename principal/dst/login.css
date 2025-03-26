@@ -1,0 +1,28 @@
+/* Estilos para el estado de login */
+#loginStatus {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#loginStatus span {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.logout-btn {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: linear-gradient(45deg, var(--button-hover), var(--primary-color));
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(138, 43, 226, 0.4);
+}

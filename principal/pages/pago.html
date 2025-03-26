@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pago - GameStore</title>
+    <meta name="description" content="Finaliza tu compra de videojuegos para PlayStation 5 en GameStore">
+    <!-- Optimización de carga de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    </noscript>
+    <link rel="stylesheet" href="/principal/dst/main.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">🎮 PlayStation 5 GameStore</div>
+            <nav class="nav-links">
+                <a href="/index.html">Inicio</a>
+                <a href="/principal/pages/catalogo/catalogo.html">Catálogo</a>
+                <a href="/principal/pages/nosotros.html">Nosotros</a>
+                <a href="/principal/pages/soporte.html">Soporte</a>
+                <a href="/principal/pages/carrito.html">Carrito</a>
+            </nav>
+            <div class="neon-particles-header" id="neonParticlesHeader"></div>
+            <div class="container">
+                <input type="text" name="text" class="input" placeholder="Buscar..." aria-label="Buscar juegos">
+            </div>
+            <div class="auth-buttons">
+                <a href="/Isesion/index.html" id="loginStatus">Logearse</a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="section-title">
+        <h2 class="logo">💳 Finalizar Compra</h2>
+    </div>
+    
+    <main class="payment-container">
+        <div class="payment-section">
+            <h3 class="payment-title">Información de Pago</h3>
+            <div class="payment-methods">
+                <div class="payment-method active" data-method="credit-card">
+                    <img src="/principal/pages/pago/Tarjetas-2.jpg" alt="Tarjeta de Crédito">
+                    <p class="payment-method-title">Tarjeta de Crédito</p>
+                </div>
+                <div class="payment-method" data-method="paypal">
+                    <img src="/principal/pages/pago/unnamed.png" alt="PayPal">
+                    <p class="payment-method-title">PayPal</p>
+                </div>
+                <div class="payment-method" data-method="transfer">
+                    <img src="/principal/pages/pago/8043680.png" alt="Transferencia">
+                    <p class="payment-method-title">Transferencia</p>
+                </div>
+            </div>
+            
+            <form id="payment-form" novalidate>
+                <!-- Campo oculto para el método de pago -->
+                <input type="hidden" id="payment-method-input" name="payment-method" value="credit-card">
+                
+                <div id="credit-card-fields">
+                    <div class="form-group">
+                        <label for="card-name">Nombre en la tarjeta <span class="required">*</span></label>
+                        <input type="text" id="card-name" placeholder="Nombre completo como aparece en la tarjeta" required autocomplete="cc-name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="card-number">Número de tarjeta <span class="required">*</span></label>
+                        <input type="text" id="card-number" placeholder="XXXX XXXX XXXX XXXX" required autocomplete="cc-number" inputmode="numeric" maxlength="19">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="expiry-date">Fecha de expiración <span class="required">*</span></label>
+                            <input type="text" id="expiry-date" placeholder="MM/AA" required autocomplete="cc-exp" inputmode="numeric" maxlength="5">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cvv">Código de seguridad (CVV) <span class="required">*</span></label>
+                            <input type="text" id="cvv" placeholder="XXX" required autocomplete="cc-csc" inputmode="numeric" maxlength="4">
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="payment-title">Dirección de Facturación</h3>
+                
+                <div class="form-group">
+                    <label for="full-name">Nombre completo <span class="required">*</span></label>
+                    <input type="text" id="full-name" placeholder="Tu nombre completo" required autocomplete="name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="address">Dirección <span class="required">*</span></label>
+                    <input type="text" id="address" placeholder="Calle, número, piso, etc." required autocomplete="street-address">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">Ciudad <span class="required">*</span></label>
+                        <input type="text" id="city" placeholder="Tu ciudad" required autocomplete="address-level2">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="postal-code">Código Postal <span class="required">*</span></label>
+                        <input type="text" id="postal-code" placeholder="XXXXX" required autocomplete="postal-code" inputmode="numeric">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">País <span class="required">*</span></label>
+                    <select id="country" required autocomplete="country">
+                        <option value="">Selecciona un país</option>
+                        <option value="pe">Perú</option>
+                        <option value="es">España</option>
+                        <option value="mx">México</option>
+                        <option value="co">Colombia</option>
+                        <option value="ar">Argentina</option>
+                        <option value="cl">Chile</option>
+                    </select>
+                </div>
+                
+                <!-- Campo oculto para el total del pedido -->
+                <input type="hidden" id="order-total" name="order-total" value="240.89">
+                
+                <div class="secure-payment">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="24" height="24">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg>
+                    Pago seguro con encriptación SSL de 256 bits
+                </div>
+            </form>
+        </div>
+        
+        <div class="payment-section">
+            <h3 class="payment-title">Resumen del Pedido</h3>
+            
+            <div class="order-summary">
+                <!-- Los elementos del carrito se cargarán dinámicamente con JavaScript -->
+            </div>
+            
+            <!-- Botones de acción con el mismo estilo que en carrito.html -->
+            <button class="checkout-btn confirm-btn" type="submit" form="payment-form">Confirmar Pago</button>
+            <a href="/principal/pages/carrito.html" class="continue-shopping">← Volver al Carrito</a>
+        </div>
+    </main>
+
+    <div class="spacer"></div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>📢 Información</h4>
+                <a href="/principal/pages/soporte.html">🔗 Soporte Técnico</a>
+                <a href="/principal/pages/contacto.html">📞 Contacto</a>
+            </div>
+            <div class="footer-section">
+                <h4>📱 Redes Sociales</h4>
+                <a href="#" aria-label="Facebook">📘 Facebook</a>
+                <a href="#" aria-label="Twitter">🐦 Twitter</a>
+                <a href="#" aria-label="Instagram">📸 Instagram</a>
+            </div>
+        </div>
+        <p>© 2025 Tienda de Videojuegos. Todos los derechos reservados.</p>
+        <div class="neon-particles-footer" id="neonParticlesFooter"></div>
+    </footer>
+    <div class="neon-particles" id="neonParticles" style="pointer-events: none; position: fixed; width: 100vw; height: 100vh; overflow: hidden;"></div>
+    <div class="neon-grid"></div>
+    <script src="/principal/script.js" defer></script>
+    <script src="/principal/search.js" defer></script>
+    <script src="/principal/pages/pago.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+/* Estilos base para los botones */
+.button {
+  height: 50px;
+  width: 150px;
+  border-radius: 10px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button span {
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.button svg {
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+/* Botón de Ver Detalles */
+.details-btn {
+  background: linear-gradient(135deg, #2c3e50, #4a69bd);
+  color: white;
+}
+
+.details-btn:hover {
+  background: linear-gradient(135deg, #4a69bd, #2c3e50);
+  transform: translateY(-3px);
+}
+
+.details-btn:hover span {
+  transform: translateX(-10px);
+}
+
+.details-btn:hover svg {
+  opacity: 1;
+  transform: translateX(30px);
+}
+
+/* Botón de Añadir al Carrito */
+.cart-btn {
+  background: linear-gradient(135deg, #273c75, #44bd32);
+  color: white;
+}
+
+.cart-btn:hover {
+  background: linear-gradient(135deg, #44bd32, #273c75);
+  transform: translateY(-3px);
+}
+
+.cart-btn:hover span {
+  transform: translateX(-10px);
+}
+
+.cart-btn:hover svg {
+  opacity: 1;
+  transform: translateX(30px);
+}
+
+/* Efecto de presionar */
+.button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  background: rgba(20, 20, 30, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  height: 100%;
+}
+
+.category-card .img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 1rem 0;
+  transition: transform 0.3s;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+}
+
+.category-card:hover .img {
+  transform: scale(1.05);
+}
+
+.category-desc {
+  margin-bottom: 1.5rem;
+  color: #ccc;
+  flex-grow: 1;
+}

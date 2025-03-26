@@ -1,0 +1,111 @@
+/* Estilos para las tarjetas de juegos */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1.5rem;
+    row-gap: 4.5rem;
+    padding: 1.5rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .game-card {
+    background: var(--dark-gray);
+    border: 1px solid var(--neon-green);
+    border-radius: 8px;
+    padding: 1.2rem;
+    padding-bottom: 1.8rem;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    will-change: transform;
+    backface-visibility: hidden;
+    position: relative;
+    overflow: hidden;
+    animation: pulseBorder 3s infinite alternate;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    min-height: 480px;
+  }
+  
+  .game-card h3 {
+    color: var(--neon-green);
+    margin-bottom: 0.8rem;
+    text-align: center;
+    font-size: 1.25rem;
+    text-shadow: 0 0 5px var(--neon-green);
+  }
+  
+  .title-product {
+    height: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .img {
+    width: 100%;
+    height: auto;
+    max-height: 320px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.15s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  
+  .img:hover {
+    transform: scale(1.04);
+    filter: drop-shadow(0 0 6px var(--neon-green));
+  }
+  
+  .game-card .price {
+    color: yellow;
+    font-weight: bold;
+    margin: 0.8rem 0;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  .game-card .price::before {
+    content: "Precio: ";
+    color: yellow;
+    text-shadow: 0 0 5px var(--neon-green);
+    font-weight: normal;
+  }
+  
+  .game-card .actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 0.8rem;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .game-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-neon);
+  }
+  
+  .game-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--neon-green);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .game-card:hover::after {
+    transform: scaleX(1);
+  }
